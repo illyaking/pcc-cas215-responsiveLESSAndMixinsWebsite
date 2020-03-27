@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Illya King">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>CAS215 Project</title>
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+        rel="stylesheet" type="text/css">
+        <link href="css/reset.css" rel="stylesheet" type="text/css">
+        <link href="css/helper.css" rel="stylesheet" type="text/css">
+        <link href="css/grid.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    </head>
+    
+    <body>
+        <div class="respond">
+            <button class="hamburger">&#9776;</button>
+            <button class="cross">&#735;</button>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#mobile">Mobile First</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#links">Links</a></li>
+            </ul>
+        </nav>
+        
+        <header>
+            <h1>CAS215 Project</h1>
+            <img src="images/startup-photos.jpg" alt="Image of a designer with a wireframe."
+            title="Image of a designer with a wireframe.">
+        </header>
+        
+        <main>
+
+            <section id="intro">
+            <h2>Responsive Web Design</h2>
+ 
+            <p><em>Responsive web design</em> is a new design philosophy that is
+            different from fixed design. In responsive web design, page layouts 
+            adjust according to the size of the end user's display; in fixed 
+            design, sizes of fonts, box elements and images remain unchanged.</p>
+
+            <p>In the past, only desktop and laptop computers were used to surf 
+            the web. It was a given that screen resolutions would be 1024 pixels 
+            wide or higher. Fixed grid CSS frameworks such as 
+            <a href="http://960.gs/">960 Grid System</a> were used to design 
+            pages that were laid out in even columns on a fixed-width grid, 
+            usually centered on the screen. As mobile devices began to hit the 
+            market, it became necessary to create web pages that would work on 
+            many devices and resolutions. As the number of devices grows 
+            (watches that surf the web are on the horizon), the more important 
+            it will be to write responsive sites.</p>
+            </section>
+
+            <section id="mobile">
+            <h2>Mobile First Design</h2>
+                
+            <p><em>Mobile first design</em> is the next step in responsive web 
+            design. In mobile first design, the primary CSS is written for mobile.
+            Then, the cascade later contains media queries that add more code for 
+            larger device resolutions.</p>
+
+            <h3>Better mobile first web design</h3>
+
+            <p>Some designers write their CSS media queries so that they only 
+            affect resolutions that are between two specific break points:</p>
+
+            <pre>
+            h3 {
+                font-size: 1.75em; 
+            }
+
+            @media (min-width: 321px) and (max-width: 480px) {
+                h3 {
+                    font-size: 2em;
+                }
+            }
+            </pre>
+
+            <p>This approach is severely limiting. What if there was CSS code 
+            that is useful for <em>all</em> resolutions above 320 pixels, 
+            including those 480 pixels and above? Writing media queries in this
+            way means that some code will need to be redeclared later.</p>
+
+            <p>We will try a different approach. Our media queries will 
+            gradually add to the style of the page the larger the resolution 
+            goes, like this:</p>
+
+            <pre>
+            h3 {
+                font-size: 1.75em;
+            }
+
+            @media (min-width: 321px) {
+                h3 {
+                    font-size: 2em;
+                }
+            }
+            </pre>
+
+            <p>See the difference? If an h3 size of 2em happens to work in every 
+            browser width above 320 pixels, we're in good shape.</p>
+            </section>
+
+            <section id="features" class="section group">
+            <div class="col span_4_of_12">
+                <img src="images/blur-business-commerce-326514.jpg" alt="Image of blurred E-Commerce store.">
+                <h3>Features of Fixed Design</h3>
+                    <ul>
+                       <li>A fixed page width in pixels, often centered in the browser 
+                          window.</li>
+                       <li>Images are set at fixed widths.</li>
+                       <li>Font sizes are set at fixed pixel or point sizes.</li>
+                    </ul>
+            </div>
+            <div class="col span_4_of_12">
+                <img src="images/apple-device-blur-blurry-273222.jpg" alt="Burred image of computer and cup of coffee.">
+                <h3>Features of Responsive Design</h3>
+                    <ul>
+                        <li>Page and box element widths are set in percentages.</li>
+                        <li>Image widths are set with percentages, often at 100% to 
+                            fill available width.</li>
+                        <li>Font sizes are set with em sizes, so that they are sized 
+                            relative to the parent element's font size.</li>
+                        <li>The primary style sheet is for desktop devices, and media 
+                            queries are used toward the end of the cascade to account 
+                            for mobile devices.</li>
+                    </ul>
+            </div>
+            <div class="col span_4_of_12">
+                <img src="images/branding-design-pencils-6444.jpg" alt="Picture of Art Pencils.">
+                <h3>Features of Mobile First Design</h3>
+                    <ul>
+                        <li>The primary style sheet is for mobile devices, and media 
+                            queries are used toward the end of the cascade for tablet, 
+                            then desktop devices.</li>
+                        <li>As a result of this change, web site interfaces are 
+                            simpler and their design is much cleaner. There is far 
+                            less CSS to write.</li>
+                    </ul>
+            </div>
+            </section>
+        
+        </main>
+
+        <footer class="section group">
+            <h2>External Links</h2>
+                <section id="links">
+                    <div class="col span_4_of_12">
+                        <h3>Responsive Design</h3>
+                            <ul>
+                               <li><a href="http://abookapart.com/products/responsive-web-design"
+                                    target="_blank">Ethan Marcotte</a></li>
+                               <li><a href="https://en.wikipedia.org/wiki/Responsive_web_design"
+                                    target="_blank">Wikipedia</a></li>
+                            </ul>
+                    </div>
+                    <div class="col span_4_of_12">
+                        <h3>Mobile First Design</h3>
+                            <ul>
+                                <li><a href="https://codemyviews.com/blog/mobilefirst"
+                                    target="_blank">Opinion Piece on mobile first design</a></li>
+                                <li><a href="http://www.sitepoint.com/making-case-mobile-first-designs"
+                                    target="_blank">Making a case for mobile first design</a></li>
+                            </ul>
+                    </div>
+                    <div class="col span_4_of_12">
+                        <h3>General Resources</h3>
+                            <ul>
+                                <li><a href="http://www.smashingmagazine.com"
+                                    target="_blank">Smashing Magazine</a></li>
+                                <li><a href="https://css-tricks.com/"
+                                    target="_blank">CSS Tricks</a></li>
+                                <li><a href="http://www.usability.gov/"
+                                    target="_blank">usability.gov</a></li>
+                            </ul>
+                    </div>
+                </section>
+
+        </footer>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="scripts/script.js"></script>
+
+</body>
+
+
+</html>

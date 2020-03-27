@@ -1,0 +1,283 @@
+/*
+
+File Name: style.less
+Date: 11/18/18
+Programmer: Illya King
+
+*/
+
+@import 'palette.less';
+@import 'mixins.less';
+
+/* colors from https://color.adobe.com/create/color-wheel */
+
+/*
+CHANGES DONE:
+- Added .gradient Mixin code to mixins.less
+- Added .gradient() to bode element on css.less
+- Adjusted .gradient Mixin code with slight color change rathe than hide the code. 
+- Moved original Nav code to Tablet Section
+- Adjust Mobile Navigation with a reduction margin space
+- Adjusted base font size to 18px
+- Added jQuery script from another class
+- Added respond element for hamburger menu
+- Added display: none command for respond element
+- Added jQuery that adds the class "menu" to the nav element when the screen is less than 481px
+- Added jQuery to show menu if else statement for window size 
+*/
+
+/* MOBILE STYLESHEET */
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    line-height: 1.5em;
+    background-color: @lightColor;
+    color: @greyColor2;
+    .gradient();
+}
+
+a {
+    &:link {
+        color: @color3;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: @color5;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    &:hover {
+        color: @color1;
+        text-decoration: underline;
+    }
+}
+
+img[alt~="computer"] {
+    .flipper;
+}
+
+main, header, footer, nav {
+    padding: 1em;
+}
+
+header {
+    .background;
+    h1 {
+        padding-bottom: 10px;
+    }
+    img {
+        border: 2px solid @darkColor;
+    }
+}
+.respond {
+    background-color: @darkColor;
+}
+
+.hamburger {
+    background:@darkColor;
+    line-height:45px;
+    color:@lightColor;
+    border:0;
+    font-size:1.4em;
+    font-weight:700;
+    cursor:pointer;
+    outline:none;
+    z-index:10;
+    padding:5px 15px 0;
+}
+
+.cross {
+    background:@darkColor;
+    top:0;
+    right:0;
+    color:@lightColor;
+    border:0;
+    font-size:3em;
+    line-height:65px;
+    font-weight:700;
+    cursor:pointer;
+    outline:none;
+    z-index:10;
+    padding:7px 15px 0;
+}
+
+.menu {
+    z-index:10;
+    font-weight:700;
+    text-align:left;
+}
+
+nav {
+    background: #000000;
+    a {
+        &:link {
+            color: @lightColor;
+            .navBoxes(@greyColor1, 5px, 5px);
+            .navButtons(inset 2px -2px 5px rgba(0,0,0,0.5));
+        }
+
+        &:hover {
+            color: @color2;
+            text-decoration: underline;
+            .navBoxes(@darkColor, 5px, 5px);
+        }
+        &:active {
+            color: @color2;
+        }
+    }
+}
+
+nav ul {
+    margin-left: 1em;
+    li {
+        display: block;
+        margin: 0 0 .75em 0;
+    }
+} 
+
+section:nth-of-type(2) {
+    .musicalChairs;
+}
+
+h1 {
+  .headingStyle(@color1; 1.8em);
+}
+
+h2 {
+  .headingStyle(@color1; 1.4em);
+}
+
+h3 {
+  .headingStyle(@color4; 1.1em);
+}
+
+h4 {
+  .headingStyle(@color3; .9em);
+}
+
+h5 {
+  .headingStyle(@color2; .85em);
+}
+
+h6 {
+  .headingStyle(@color4; .75em);
+}
+
+ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+li {
+    line-height: 1.5em;
+}
+
+em {
+    .shortRound;
+}
+
+pre {
+    font-family: "Courier New", monospace;
+    white-space: pre-wrap;
+    .codeRules;
+    .transparent;
+}
+
+footer {
+    .footerBackground(linear-gradient(@darkColor, @greyColor5));
+    
+    h2, h3 {
+        color: @lightColor4;
+    }
+    
+        li {
+        color: @lightColor;
+        a {
+            &:link {
+                color: @lightColor;
+                text-decoration: underline;
+            }
+
+            &:visited {
+                color: @lightColor5;
+                text-decoration: underline;
+            }
+
+            &:hover {
+                color: @lightColor2;
+                text-decoration: none;
+            }
+            &:active {
+                color: @lightColor;
+            }
+        }
+    }
+}
+
+
+/*
+
+TABLET STYLESHEET
+
+The following CSS affects all screen sizes larger than 480 pixels wide.
+
+*/
+
+@media only screen and (min-width: 481px) {
+
+    body {
+        font-size: 14px;
+    }
+    
+    nav {
+    background: #000000;
+        a {
+            &:link {
+                color: @lightColor;
+                .navBoxes(@greyColor1, 5px, 5px);
+                .navButtons(inset 2px -2px 5px rgba(0,0,0,0.5));
+            }
+
+            &:hover {
+                color: @color2;
+                text-decoration: underline;
+                .navBoxes(@darkColor, 5px, 5px);
+            }
+            &:active {
+                color: @color2;
+            }
+        }
+    }
+
+    nav ul {
+        margin-left: 1.250em;
+        li {
+            display: inline-block;
+            margin-right: 1.75em;
+        }
+    }
+    
+    .respond {
+        display: none;
+    }
+}
+
+/*
+
+DESKTOP STYLESHEET
+
+The following CSS affects all screen sizes larger than 1024 pixels wide.
+
+*/
+
+@media only screen and (min-width: 1025px) {
+    header, main, footer {
+        padding: 2em;
+    }
+}
